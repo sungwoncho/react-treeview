@@ -52,7 +52,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -78,7 +78,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    defaultCollapsed: _react.PropTypes.bool,
 	    nodeLabel: _react.PropTypes.node.isRequired,
 	    className: _react.PropTypes.string,
-	    itemClassName: _react.PropTypes.string
+	    itemClassName: _react.PropTypes.string,
+	    childrenClassName: _react.PropTypes.string,
+	    treeViewClassName: _react.PropTypes.string
 	  },
 	
 	  getInitialState: function getInitialState() {
@@ -102,11 +104,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var className = _props2$className === undefined ? '' : _props2$className;
 	    var _props2$itemClassName = _props2.itemClassName;
 	    var itemClassName = _props2$itemClassName === undefined ? '' : _props2$itemClassName;
+	    var _props2$treeViewClassName = _props2.treeViewClassName;
+	    var treeViewClassName = _props2$treeViewClassName === undefined ? '' : _props2$treeViewClassName;
+	    var _props2$childrenClassName = _props2.childrenClassName;
+	    var childrenClassName = _props2$childrenClassName === undefined ? '' : _props2$childrenClassName;
 	    var nodeLabel = _props2.nodeLabel;
 	    var children = _props2.children;
 	    var defaultCollapsed = _props2.defaultCollapsed;
 	
-	    var rest = _objectWithoutProperties(_props2, ['collapsed', 'className', 'itemClassName', 'nodeLabel', 'children', 'defaultCollapsed']);
+	    var rest = _objectWithoutProperties(_props2, ['collapsed', 'className', 'itemClassName', 'treeViewClassName', 'childrenClassName', 'nodeLabel', 'children', 'defaultCollapsed']);
 	
 	    var arrowClassName = 'tree-view_arrow';
 	    var containerClassName = 'tree-view_children';
@@ -117,11 +123,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	    var arrow = _react2['default'].createElement('div', _extends({}, rest, {
 	      className: className + ' ' + arrowClassName,
-	      onClick: this.handleClick }));
+	      onClick: this.handleClick
+	    }));
 	
 	    return _react2['default'].createElement(
 	      'div',
-	      { className: 'tree-view' },
+	      { className: 'tree-view ' + treeViewClassName },
 	      _react2['default'].createElement(
 	        'div',
 	        { className: 'tree-view_item ' + itemClassName },
@@ -130,7 +137,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      ),
 	      _react2['default'].createElement(
 	        'div',
-	        { className: containerClassName },
+	        { className: containerClassName + ' ' + childrenClassName },
 	        collapsed ? null : children
 	      )
 	    );
@@ -140,13 +147,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports['default'] = TreeView;
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 1 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
 
-/***/ }
+/***/ })
 /******/ ])
 });
 ;
